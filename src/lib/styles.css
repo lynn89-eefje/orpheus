@@ -1,0 +1,17 @@
+h1 {
+    font-family: Montserrat, Geom, Futura;
+    font-weight: 900;
+    text-align: center;
+}
+h2 {
+    font-family: Playwrite FR Trad, Montserrat, Geom, Futura;
+    text-align: center;
+}
+h3, h4, h5, h6 {
+    font-family: Geom, Montserrat, Futura;
+    text-align: center;
+}
+p {
+    font-family: Montserrat, Geom, Futura;
+    text-align: center;
+}
