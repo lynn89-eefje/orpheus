@@ -15,3 +15,26 @@ p {
     font-family: Montserrat, Geom, Futura;
     text-align: center;
 }
+button {
+    border: none;
+    border-radius: 30px;
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(110, 98, 85);
+    box-shadow: 0px 5px rgb(63, 55, 46);
+    translate: transform 1s ease-in-out;
+}
+button:hover {
+    cursor: pointer;
+}
+button:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+button span.material-symbols-outlined {
+    transform: translateY(2px);
+    color: rgb(230, 215, 215);
+    font-size: 35px;
+    font-weight: 600;
+}

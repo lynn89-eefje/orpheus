@@ -8,13 +8,17 @@
     onMount(() => {
         setTimeout(() => {toggle = true}, 100);
     })
+
+    let content = $state("");
+    let page = $state(0);
+    let pages = ["a", "b", "c"];
 </script>
 <style>
     #card {
         position: fixed;
         background-color: aliceblue;
-        top: 50px;
-        bottom: 50px;
+        top: 45px;
+        bottom: 55px;
         right: 70px;
         left: 70px;
         transform: rotate(0.5deg);
@@ -33,7 +37,7 @@
             
         }
         50% {
-            transform: rotate(1deg);
+            transform: rotate(1.5deg);
         }
         100% {
             transform: rotate(0.5deg);
@@ -45,11 +49,21 @@
         width: 100%;
         height: 100%;
     }
+
+    #buttons {
+        position: absolute;
+        bottom: 30px;
+        transform: translate(-50%, 0%);
+        left: 50%;
+    }
 </style>
 {#if toggle}
-    <div id="card" transition:fly={{y:-200, easing: cubicInOut}}>
+    <div id="card" transition:fly={{y:-200, easing: cubicInOut, duration:1200}}>
         <div id="content">
-            <h1>Content</h1>
+            {@html content}
+            <div id="buttons">
+                {#if page > 0}<button onclick={() => {page--}}><span class="material-symbols-outlined">arrow_circle_left</span></button>{/if}{#if page < pages.length-1}<button onclick={() => {page++}}><span class="material-symbols-outlined">arrow_circle_right</span></button>{/if}
+            </div>
         </div>
     </div>
 {/if}
