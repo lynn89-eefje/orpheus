@@ -59,12 +59,32 @@
         margin-right: 30px;
     }
 
+    #page.page2 div img {
+        transform: translateY(-50px);
+    }
+
+    #page.page4 div h1 {
+        font-size: 70px;
+    }
+    #page.page4 div img {
+        transform: translateY(-40px);
+    }
     @media screen and (max-width: 800px) {
-        #page.page2 h1 {
+        #page.page2 div h1 {
             font-size: 15px;
         }
-        #page.page2 h3 {
+        #page.page2 div h3 {
             font-size: 14px;
+        }
+        #page.page2 div img {
+            transform: translateY(20px);
+        }
+
+        #page.page4 div h1 {
+            font-size: 30px;
+        }
+        #page.page4 div img {
+            transform: translateY(20px);
         }
     }
 
@@ -76,9 +96,8 @@
     }
 
     #page-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
+        position: absolute;
+        inset: 0;
     }
 </style>
 {#if toggle}
@@ -101,14 +120,54 @@
             {#if page == 2}
             <div id="page-wrapper">
                 <div id="page" class="page2">
-                        <div style="transform: translateY(-50px)">
-                            <h3 in:slide={{delay:1000}} out:slide>you didn't just plunder doubloons,</h3>
-                            <h3 in:slide={{delay:3000}} out:slide>you also stole</h3>
-                            <h1 in:slide={{delay:3700}} out:slide style="font-size: 70px; font-weight: 900; margin: 0;">MY HEART</h1>
-                        </div>
+                    <div>
+                        <h3 in:slide={{delay:1000}} out:slide>you didn't just plunder doubloons,</h3>
+                        <h3 in:slide={{delay:3000}} out:slide>you also stole</h3>
+                        <h1 in:slide={{delay:3700}} out:slide style="font-size: 70px; font-weight: 900; margin: 0;">MY HEART</h1>
+                        <img in:scale={{delay:4500}} out:scale src="images/chest.png" alt="Treasure Chest" style="max-width: 300px;"/>
+                    </div>
                 </div>
-                <img in:scale={{delay:4500}} out:scale src="images/chest.png" alt="Treasure Chest" style="position: absolute; transform: translate(-50%, -50%); left: 50%; bottom: 40px; max-width: 300px;"/>
-
+            </div>
+            {/if}
+            {#if page == 3}
+            <div id="page" in:slide={{delay:1000}} out:slide>
+                <h3>And ever since that day...</h3>
+                <img src="images/heidiBW.png" alt="Heidi" />
+            </div>
+            {/if}
+            {#if page == 4}
+                <div id="page-wrapper">
+                    <div id="page" class="page4">
+                        <div>
+                            <h3 in:slide={{delay:1000}} out:slide>you became my</h3>
+                            <h1 in:slide={{delay:1700}} out:slide style="font-weight: 900; margin: 0;">OBSESSION</h1>
+                            <img in:scale={{delay:2500}} out:scale src="images/boba.png" alt="Orpheus with a cup of boba" style="max-width: 300px;"/>
+                        </div>
+                    </div>
+                </div>
+            {/if}
+            {#if page == 5}
+               <div id="page" in:slide={{delay:1000}} out:slide>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><h3>You brought color to my world.</h3></td>
+                                <td><img src="images/triColor.png" alt="Color Heidi"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            {/if}
+            {#if page == 6}
+            <div id="page" in:slide={{delay:1000}} out:slide>
+                <img src="images/construct.png" alt="Orpheus and Heidi building" style="max-width: 500px;"/>
+                <h3>Together, we've built things we never thought we could.</h3>
+            </div>
+            {/if}
+            {#if page == 7}
+            <div id="page" in:slide={{delay:1000}} out:slide>
+                <h3>Together, we've explored the world.</h3>
+                <img src="images/boat.png" alt="Orpheus and Heidi on a boat" style="max-width: 500px;"/>
             </div>
             {/if}
             <div id="buttons">
@@ -120,22 +179,22 @@
             <svg width="110" height="110" style="position: fixed; bottom: 200px; right: 5px;">
                 <path d="M 62.4689 11.0223 C 59.0884 11.8651 57.0936 15.2564 57.9238 18.5865 c 1.6983 6.8115 9.0005 6.8665 15.3155 12.4198 c 2.7795 -7.7671 9.378 -11.6096 7.7426 -18.1688 c -0.8303 -3.3301 -4.2342 -5.3753 -7.5642 -4.5451 c -2.4219 0.6038 -4.1887 2.5449 -4.6316 4.8526 c -1.4744 -1.8297 -3.8953 -2.7266 -6.3172 -2.1228 z" fill="black"/>
             </svg>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 40px; bottom: 30px; transform: rotate(-5deg)">^w^</h2>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 40px; top: 30px; transform: rotate(8deg)">:3</h2>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 40px; top: 90px; transform: rotate(-5deg)">{">~<"}</h2>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 30px; bottom:180px; transform: rotate(-5deg)"><span class="material-symbols-outlined" style:font-size="50px;">kid_star</span></h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 40px; bottom: 30px; transform: rotate(-5deg)">^w^</h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 40px; top: 30px; transform: rotate(8deg)">:3</h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 40px; top: 90px; transform: rotate(-5deg)">{">~<"}</h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 30px; bottom:180px; transform: rotate(-5deg)"><span class="material-symbols-outlined" style:font-size="50px;">kid_star</span></h2>
 
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 40px; bottom:180px; transform: rotate(-5deg)"><span class="material-symbols-outlined" style:font-size="60px;">kid_star</span></h2>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 20px; top:170px; transform: rotate(9deg);"><span class="material-symbols-outlined" style:font-size="60px;">kid_star</span></h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 40px; bottom:180px; transform: rotate(-5deg)"><span class="material-symbols-outlined" style:font-size="60px;">kid_star</span></h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 20px; top:170px; transform: rotate(9deg);"><span class="material-symbols-outlined" style:font-size="60px;">kid_star</span></h2>
 
             <svg width="80" height="80" style="position: fixed; bottom:90px; right: 10px;">
                 <path d="M 15.6931 3.0273 C 13.1911 2.0669 10.4378 3.3237 9.4918 5.7884 c -1.9352 5.0413 2.6418 8.2979 4.1708 14.5833 c 5.1784 -3.6678 11.0315 -3.1777 12.895 -8.0323 c 0.9461 -2.4647 -0.2964 -5.2553 -2.761 -6.2014 c -1.7925 -0.6881 -3.7623 -0.2445 -5.0595 1.0142 c -0.1218 -1.8034 -1.2515 -3.4368 -3.044 -4.1248 z" stroke="black" fill="black"/>
             </svg>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 40px; bottom: 40px; transform: rotate(8deg)">:P</h2>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 30px; top: 130px; transform: rotate(8deg)">hehe</h2>
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 30px; top: 70px; transform: rotate(-8deg)">orphy!</h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 40px; bottom: 40px; transform: rotate(8deg)">:P</h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 30px; top: 130px; transform: rotate(8deg)">hehe</h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; right: 30px; top: 70px; transform: rotate(-8deg)">orphy!</h2>
 
-            <h2 class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 20px; top:200px; transform: rotate(9deg);"><span class="material-symbols-outlined" style:font-size="80px;">filter_vintage</span></h2>
+            <h2 translate="no" class="decor" style="user-select: none; -webkit-user-select: none; position:fixed; left: 20px; top:200px; transform: rotate(9deg);"><span class="material-symbols-outlined" style:font-size="80px;">filter_vintage</span></h2>
             <svg width="110" height="110" style="position: fixed; bottom: 40px; left: 5px;">
                 <path d="M 62.4689 11.0223 C 59.0884 11.8651 57.0936 15.2564 57.9238 18.5865 c 1.6983 6.8115 9.0005 6.8665 15.3155 12.4198 c 2.7795 -7.7671 9.378 -11.6096 7.7426 -18.1688 c -0.8303 -3.3301 -4.2342 -5.3753 -7.5642 -4.5451 c -2.4219 0.6038 -4.1887 2.5449 -4.6316 4.8526 c -1.4744 -1.8297 -3.8953 -2.7266 -6.3172 -2.1228 z" fill="black"/>
             </svg>
