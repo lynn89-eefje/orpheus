@@ -82,7 +82,7 @@
             <div id="page" in:fly={{x:-100, delay:1000}} out:fly={{x:-100}}>
                     <h3>Dear Orpheus,</h3>
                     <svg width="120" height="120" style="margin: 0 auto; display: block;">
-                        <path d="M 39.9259 9.4881 C 26.528 9.2542 15.7411 19.8676 15.5107 33.0655 c -0.4712 26.9959 26.6025 34.4695 44.5354 61.3866 c 18.0581 -26.0888 46.3969 -33.7954 46.8506 -59.7915 c 0.2304 -13.198 -10.3795 -24.1848 -23.5775 -24.4152 c -9.5985 -0.1675 -18.095 5.285 -22.0375 13.4174 c -3.6563 -8.2651 -11.7573 -14.0073 -21.3559 -14.1749 z" stroke="darkred" fill="none" stroke-width="10px"/>
+                        <path d="M 39.9259 9.4881 C 26.528 9.2542 15.7411 19.8676 15.5107 33.0655 c -0.4712 26.9959 26.6025 34.4695 44.5354 61.3866 c 18.0581 -26.0888 46.3969 -33.7954 46.8506 -59.7915 c 0.2304 -13.198 -10.3795 -24.1848 -23.5775 -24.4152 c -9.5985 -0.1675 -18.095 5.285 -22.0375 13.4174 c -3.6563 -8.2651 -11.7573 -14.0073 -21.3559 -14.1749 z" stroke="black" fill="none" stroke-width="10px"/>
                     </svg>
             </div>
             {/if}
@@ -100,7 +100,7 @@
                         <h1 in:slide={{delay:2700}} out:slide style="font-size: 50px; font-weight: 900; margin: 0;">MY HEART</h1>
                     </div>
             </div>
-            <img in:fly={{delay:3500, y:50}} out:fly={{y:50}} src="images/chest.png" alt="Treasure Chest" style="position: absolute; transform: translate(-50%, -50%); left: 50%; bottom: 40px; max-width: 250px;"/>
+            <img in:fly={{delay:3500, y:50}} out:fly={{y:50}} src="images/chest.png" alt="Treasure Chest" style="position: absolute; transform: translate(-50%, -50%); left: 50%; bottom: 30px; max-width: 250px;"/>
             {/if}
             <div id="buttons">
                 {#if page > 0}<button onclick={() => {page--}}><span translate = "no" class="material-symbols-outlined">arrow_circle_left</span></button>{/if}{#if page < pagesEnd}<button onclick={() => {page++}}><span translate = "no" class="material-symbols-outlined">arrow_circle_right</span></button>{/if}
