@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import { cubicInOut } from "svelte/easing";
-    import { draw, fly, slide } from "svelte/transition";
+    import { draw, fly, scale, slide } from "svelte/transition";
 
     let toggle = $state(false);
 
@@ -9,9 +9,8 @@
         setTimeout(() => {toggle = true}, 100);
     })
 
-    let content = $state("");
-    let page = $state(3);
-    let pagesEnd = 4;
+    let page = $state(0);
+    let pagesEnd = 8;
 </script>
 <style>
     #card {
@@ -75,6 +74,12 @@
         transform: translate(-50%, 0%);
         left: 50%;
     }
+
+    #page-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
 </style>
 {#if toggle}
     <div id="card" transition:fly={{y:-200, easing: cubicInOut, duration:1200}}>
@@ -88,20 +93,23 @@
             </div>
             {/if}
             {#if page == 1}
-            <div id="page" in:fly={{y:-100, delay:1000}} out:fly={{y:-100}}>
+            <div id="page" in:slide={{delay:1000}} out:slide>
                     <h3>From the moment we first met, on the High Seas...</h3>
                     <img src="images/orph-sea.png" alt="Pirate Orpheus" />
             </div>
             {/if}
             {#if page == 2}
-            <div id="page" class="page2">
-                    <div style="transform: translateY(-50px)">
-                        <h3 in:slide={{delay:1000}} out:slide>you didn't just plunder doubloons,</h3>
-                        <h3 in:slide={{delay:3000}} out:slide>you also stole</h3>
-                        <h1 in:slide={{delay:3700}} out:slide style="font-size: 70px; font-weight: 900; margin: 0;">MY HEART</h1>
-                    </div>
+            <div id="page-wrapper">
+                <div id="page" class="page2">
+                        <div style="transform: translateY(-50px)">
+                            <h3 in:slide={{delay:1000}} out:slide>you didn't just plunder doubloons,</h3>
+                            <h3 in:slide={{delay:3000}} out:slide>you also stole</h3>
+                            <h1 in:slide={{delay:3700}} out:slide style="font-size: 70px; font-weight: 900; margin: 0;">MY HEART</h1>
+                        </div>
+                </div>
+                <img in:scale={{delay:4500}} out:scale src="images/chest.png" alt="Treasure Chest" style="position: absolute; transform: translate(-50%, -50%); left: 50%; bottom: 40px; max-width: 300px;"/>
+
             </div>
-            <img in:fly={{delay:4500, y:100}} out:fly={{y:100}} src="images/chest.png" alt="Treasure Chest" style="position: absolute; transform: translate(-50%, -50%); left: 50%; bottom: 40px; max-width: 300px;"/>
             {/if}
             <div id="buttons">
                 {#if page > 0}<button onclick={() => {page--}}><span translate = "no" class="material-symbols-outlined">arrow_circle_left</span></button>{/if}{#if page < pagesEnd}<button onclick={() => {page++}}><span translate = "no" class="material-symbols-outlined">arrow_circle_right</span></button>{/if}
