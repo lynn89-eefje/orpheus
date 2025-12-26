@@ -43,3 +43,10 @@ button span.material-symbols-outlined {
     -ms-user-select: none;
     -moz-user-select: none;
 }
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 0 auto;
+    display: block;
+}
