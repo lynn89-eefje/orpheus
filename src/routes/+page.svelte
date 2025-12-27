@@ -10,7 +10,7 @@
     })
 
     let page = $state(0);
-    let pagesEnd = 8;
+    let pagesEnd = 11;
 </script>
 <style>
     #card {
@@ -69,6 +69,13 @@
     #page.page4 div img {
         transform: translateY(-40px);
     }
+
+    #page.page10 div h1 {
+        font-size: 70px;
+    }
+    #page.page10 div img {
+        transform: translateY(-50px);
+    }
     @media screen and (max-width: 800px) {
         #page.page2 div h1 {
             font-size: 15px;
@@ -77,14 +84,21 @@
             font-size: 14px;
         }
         #page.page2 div img {
-            transform: translateY(20px);
+            transform: translateY(-40px);
         }
 
         #page.page4 div h1 {
             font-size: 30px;
         }
         #page.page4 div img {
-            transform: translateY(20px);
+            transform: translateY(-25px);
+        }
+
+        #page.page10 div h1 {
+            font-size: 30px;
+        }
+        #page.page10 div img {
+            transform: translateY(-30px);
         }
     }
 
@@ -168,6 +182,36 @@
             <div id="page" in:slide={{delay:1000}} out:slide>
                 <h3>Together, we've explored the world.</h3>
                 <img src="images/boat.png" alt="Orpheus and Heidi on a boat" style="max-width: 500px;"/>
+            </div>
+            {/if}
+            {#if page == 8}
+            <div id="page" in:slide={{delay:1000}} out:slide>
+                <h3>I hope you accept this letter as a token of my love...</h3>
+            </div>
+            {/if}
+            {#if page == 9}
+            <div id="page" in:slide={{delay:1000}} out:slide>
+                <img src="images/chair.png" alt="Orpheus and Heidi forming a chair" style="max-width: 500px;"/>
+                <h3>and a confession of my inseperability to you.</h3>
+            </div>
+            {/if}
+            {#if page == 10}
+            <div id="page-wrapper">
+                <div id="page" class="page10">
+                    <div>
+                        <h3 in:slide={{delay:1000}} out:slide>We first met on the seas.</h3>
+                        <h3 in:slide={{delay:3000}} out:slide>Now, together, we can</h3>
+                        <h1 in:slide={{delay:3700}} out:slide style="font-size: 70px; font-weight: 900; margin: 0;">RULE THE SEAS</h1>
+                        <img in:scale={{delay:4500}} out:scale src="images/highSeas.png" alt="Orpheus and Heidi as pirates" style="max-width: 500px"/>
+                    </div>
+                </div>
+            </div>
+            {/if}
+            {#if page == 11}
+            <div id="page" in:slide={{delay:1000}} out:slide>
+                <h3>xoxo,</h3>
+                <h2 style="font-family: Playwrite FR Trad, Nanum Pen Script; font-size: 50px;">Heidi <span class="material-symbols-outlined" style="font-size: 40px;">pets</span></h2>
+                <img src="images/plead.png" alt="Heidi's pleading face" style="max-width: 500px;"/>
             </div>
             {/if}
             <div id="buttons">
