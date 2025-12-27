@@ -6,11 +6,17 @@ This demo is a love letter between Heidi and Orpheus (hehe :3)
 
 ## How to use
 
-This site is fully usable on mobile devices and computers with a mouse/trackpad. To navigate, simply use the arrow buttons at the bottom of the page to go between pages
+This site is fully usable on mobile devices and computers with a mouse/trackpad. To navigate, simply use the arrow buttons at the bottom of the page to go between pages, or use left and right arrow keys on a keyboard.
 
 ## How I made this project
 
 This site was made on Svelte and deployed on the SvelteKit framework.
+
+## Challenges
+
+The main challenge I faced was initially positioning images on top of the bold <h1> text, while also trying to add in transitions. I eventually realized that the slide transition would be easier to handle and that I also didn't need to use position: absolute just to translate the image up. This made it possible to have a smooth experience on mobile as well.
+
+Additionally, it took me a long time to put together the border since I decided to make everything out of SVGs or body tags; however, I think it was worth it since I have more power to change the border directly, compared to if I had to constantly replace the images. (It did make the code somewhat messy tho ;-;)
 
 
 ## Assets

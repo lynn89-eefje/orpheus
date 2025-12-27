@@ -11,6 +11,23 @@
 
     let page = $state(0);
     let pagesEnd = 11;
+
+    let buttonActive = $state(0);
+
+    onMount(() => {
+        onkeydown = function(event) {
+            if (event.key == "ArrowLeft" && page > 0) {
+                page--;
+                buttonActive = 1;
+                setTimeout(() => {buttonActive = 0}, 100);
+            }
+            else if (event.key == "ArrowRight" && page < pagesEnd) {
+                page++;
+                buttonActive = 2;
+                this.setTimeout(() => {buttonActive = 0}, 100);
+            }
+        }
+    }) 
 </script>
 <style>
     #card {
@@ -210,12 +227,12 @@
             {#if page == 11}
             <div id="page" in:slide={{delay:1000}} out:slide>
                 <h3>xoxo,</h3>
-                <h2 style="font-family: Playwrite FR Trad, Nanum Pen Script; font-size: 50px;">Heidi <span class="material-symbols-outlined" style="font-size: 40px;">pets</span></h2>
+                <h2 style="font-family: Playwrite FR Trad, Nanum Pen Script; font-size: 35px;">Heidi <span class="material-symbols-outlined" style="font-size: 40px; transform: rotate(5deg);" translate="no">pets</span></h2>
                 <img src="images/plead.png" alt="Heidi's pleading face" style="max-width: 500px;"/>
             </div>
             {/if}
             <div id="buttons">
-                {#if page > 0}<button onclick={() => {page--}}><span translate = "no" class="material-symbols-outlined">arrow_circle_left</span></button>{/if}{#if page < pagesEnd}<button onclick={() => {page++}}><span translate = "no" class="material-symbols-outlined">arrow_circle_right</span></button>{/if}
+                {#if page > 0}<button class:on={buttonActive == 1} onclick={() => {page--}}><span translate = "no" class="material-symbols-outlined">arrow_circle_left</span></button>{/if}{#if page < pagesEnd}<button class:on = {buttonActive == 2} onclick={() => {page++}}><span translate = "no" class="material-symbols-outlined">arrow_circle_right</span></button>{/if}
             </div>
             <svg width="80" height="80" style="position: fixed; top:30px; left: 20px;">
                 <path d="M 15.6931 3.0273 C 13.1911 2.0669 10.4378 3.3237 9.4918 5.7884 c -1.9352 5.0413 2.6418 8.2979 4.1708 14.5833 c 5.1784 -3.6678 11.0315 -3.1777 12.895 -8.0323 c 0.9461 -2.4647 -0.2964 -5.2553 -2.761 -6.2014 c -1.7925 -0.6881 -3.7623 -0.2445 -5.0595 1.0142 c -0.1218 -1.8034 -1.2515 -3.4368 -3.044 -4.1248 z" stroke="black" fill="black"/>

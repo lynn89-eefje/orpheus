@@ -32,6 +32,10 @@ button:active {
     box-shadow: none;
     transform: translateY(5px);
 }
+button.on {
+    box-shadow: none;
+    transform: translateY(5px);
+}
 button span.material-symbols-outlined {
     transform: translateY(2px);
     color: rgb(230, 215, 215);
