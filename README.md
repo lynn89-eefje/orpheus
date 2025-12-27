@@ -1,38 +1,26 @@
-# sv
+# Orpheus!
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This project is a demo for Cœur, a draft YSWS where participants make an e-card/letter to someone they love or about something they love, and get either stickers or a sweatshirt!
 
-## Creating a project
+This demo is a love letter between Heidi and Orpheus (hehe :3)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## How to use
 
-```sh
-# create a new project in the current directory
-npx sv create
+This site is fully usable on mobile devices and computers with a mouse/trackpad. To navigate, simply use the arrow buttons at the bottom of the page to go between pages
 
-# create a new project in my-app
-npx sv create my-app
-```
+## How I made this project
 
-## Developing
+This site was made on Svelte and deployed on the SvelteKit framework.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```sh
-npm run dev
+## Assets
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+All assets are either original (made by moi >w<) or derived from stickers.hackclub.com
+Below are all designers of assets derived from stickers.hackclub.com
 
-## Building
+- msw
+- fropii
+- bunnyguy
+- candy
 
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+*Construct assets did not have a named author
