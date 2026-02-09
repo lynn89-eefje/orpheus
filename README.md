@@ -14,10 +14,9 @@ This site was made on Svelte and deployed on the SvelteKit framework.
 
 ## Challenges
 
-The main challenge I faced was initially positioning images on top of the bold <h1> text, while also trying to add in transitions. I eventually realized that the slide transition would be easier to handle and that I also didn't need to use position: absolute just to translate the image up. This made it possible to have a smooth experience on mobile as well.
+The main challenge I faced was initially positioning images on top of the bold header-1 text, while also trying to add in transitions. I eventually realized that the slide transition would be easier to handle and that I also didn't need to use position: absolute just to translate the image up. This made it possible to have a smooth experience on mobile as well.
 
 Additionally, it took me a long time to put together the border since I decided to make everything out of SVGs or body tags; however, I think it was worth it since I have more power to change the border directly, compared to if I had to constantly replace the images. (It did make the code somewhat messy tho ;-;)
-
 
 ## Assets
 
@@ -30,3 +29,7 @@ Below are all designers of assets derived from stickers.hackclub.com
 - candy
 
 *Construct assets did not have a named author
+
+## Sugar Rushes
+
+- This project gets the +2 sugar rush for full usability by keyboard, because I used event listeners to incorporate moving between pages with the arrow keys on the keyboard.
